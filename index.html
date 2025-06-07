@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman E-commerce Sederhana</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Halaman E-commerce Sederhana</h1>
+        <nav>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Beranda -->
+      <section id="beranda" class="tentang">
+        <div class="container">
+          <h2>
+            Welcome to Charming Petals, Where Every Bloom Tells a Story ✨
+          </h2>
+          <p>
+            Brighten someone's day with the perfect bouquet. At Charming Petals
+            ✨ we specialize in fresh, hand-crafted flower arrangements for
+            every occasion—birthdays, anniversaries, weddings, condolences, or
+            just because.
+          </p>
+        </div>
+      </section>
+
+      <!-- Produk -->
+      <section id="produk" class="produk-container">
+        <h2>Produk</h2>
+        <div class="produk-list">
+          <div class="produk-item">
+            <img src="img/buket1.jpg" alt="Buket Mawar Merah" />
+            <h3>Mawar Merah Romantis</h3>
+            <p class="harga">Rp150.000</p>
+            <button
+              class="tambah-keranjang"
+              data-nama="Mawar Merah Romantis"
+              data-harga="150000"
+            >
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
+          </div>
+          <div class="produk-item">
+            <img src="img/buket2.jpg" alt="Buket Lily Putih" />
+            <h3>Lily Putih Elegan</h3>
+            <p class="harga">Rp170.000</p>
+            <button
+              class="tambah-keranjang"
+              data-nama="Lily Putih Elegan"
+              data-harga="170000"
+            >
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
+          </div>
+          <div class="produk-item">
+            <img src="img/buket3.jpg" alt="Buket Campuran" />
+            <h3>Mix Flower Ceria</h3>
+            <p class="harga">Rp190.000</p>
+            <button
+              class="tambah-keranjang"
+              data-nama="Mix Flower Ceria"
+              data-harga="190000"
+            >
+              <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tentang Kami -->
+      <section id="tentang" class="tentang-kami">
+        <div class="container">
+          <h2>Tentang Kami</h2>
+          <p>
+            Charming Petals adalah toko bunga lokal yang mengutamakan kesegaran,
+            keindahan desain, dan layanan pengiriman cepat. Kami percaya setiap
+            bunga memiliki makna — dan kami ingin membantu Anda menyampaikannya.
+          </p>
+        </div>
+      </section>
+
+      <!-- Kontak -->
+      <section id="kontak" class="kontak">
+        <div class="container">
+          <h2>Hubungi Kami</h2>
+          <ul>
+            <li><i class="fas fa-phone"></i> WhatsApp: 0812-3456-7890</li>
+            <li>
+              <i class="fas fa-envelope"></i> Email: charming.petals@gmail.com
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Alamat: Griya Bandung Indah,
+              Bandung
+            </li>
+            <li><i class="fab fa-instagram"></i> Instagram: @nasywawn</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Keranjang Belanja -->
+      <section id="keranjang" class="keranjang">
+        <div class="container">
+          <h2>Keranjang Belanja</h2>
+          <ul id="keranjang-list"></ul>
+          <p>Total: <span id="total-harga">Rp0</span></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Charming Petals. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript untuk keranjang -->
+    <script>
+      const tombolTambah = document.querySelectorAll(".tambah-keranjang");
+      const keranjangList = document.getElementById("keranjang-list");
+      const totalHargaEl = document.getElementById("total-harga");
+      let total = 0;
+
+      tombolTambah.forEach((tombol) => {
+        tombol.addEventListener("click", function () {
+          const nama = this.getAttribute("data-nama");
+          const harga = parseInt(this.getAttribute("data-harga"));
+          const item = document.createElement("li");
+          item.textContent = `${nama} - Rp${harga.toLocaleString()}`;
+          keranjangList.appendChild(item);
+          total += harga;
+          totalHargaEl.textContent = `Rp${total.toLocaleString()}`;
+        });
+      });
+    </script>
+  </body>
+</html>

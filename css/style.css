@@ -1,0 +1,158 @@
+/* Reset dan global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Header */
+header {
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Section */
+.tentang,
+.tentang-kami,
+.kontak,
+.keranjang {
+  background-color: #fff;
+  padding: 30px 0;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Produk */
+.produk-container {
+  padding: 20px 0;
+}
+
+.produk-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.produk-item {
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.produk-item:hover {
+  transform: scale(1.03);
+}
+
+.produk-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.harga {
+  font-weight: bold;
+  color: #e91e63;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #e91e63;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button i {
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #d81b60;
+}
+
+/* Keranjang */
+.keranjang ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.keranjang li {
+  padding: 5px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produk-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produk-item {
+    width: 90%;
+  }
+}
